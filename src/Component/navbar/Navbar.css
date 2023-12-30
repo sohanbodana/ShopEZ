@@ -1,0 +1,98 @@
+.nohover:hover {
+    text-decoration: none;
+    /* Disable underline on hover */
+    color: inherit;
+    /* Keep the original text color on hover */
+    cursor: default;
+    /* Remove the pointer cursor on hover */
+    background-color: #f2f2f2;
+    border: none;
+}
+
+nav {
+    overflow: hidden;
+    padding: 0px;
+}
+
+nav li {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+/* nav a:hover {
+    color: black;
+    border: solid rgb(31, 222, 174) 1px;
+    border-radius: 8px;
+    background: #dc9cdc ;
+   } */
+
+.nav-link {
+    padding: 10px;
+}
+
+.self {
+    /* background: #dc9cdc; */
+    padding: 3px;
+}
+
+.self2:hover {
+    background: gainsboro;
+    border-bottom: 2px solid purple;
+    text-decoration: dotted;
+    border-radius: 10px;
+}
+
+.itemss {
+    justify-content: end;
+    padding-right: 5%;
+}
+
+.Aa {
+    background: #0b150f;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.selected{
+    border: 2px solid black;
+    border-radius: 22px;
+    padding: 5px;
+}
+option{
+    font-size: large;
+    background-color: white;
+    padding: 3px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .navbar {
+       padding: 0;
+    }
+   }
+   
+   /* Medium devices (tablets, 768px and up) */
+   @media (min-width: 768px) {
+    .navbar {
+       padding: 0;
+    }
+   }
+   
+   /* Large devices (desktops, 992px and up) */
+   @media (min-width: 992px) {
+    .navbar {
+       padding: 1rem 0;
+    }
+   }
+   
+   /* Extra large devices (large desktops, 1200px and up) */
+   @media (min-width: 1200px) {
+    .navbar {
+       padding: 1rem 0;
+    }
+   }

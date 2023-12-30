@@ -1,0 +1,74 @@
+.homeSlide h1 {
+    font-size: 45px;
+    line-height: 55px;
+    margin: 50px 0 20px 0;
+  }
+  .homeSlide p {
+    margin: 20px 0;
+  }
+  .homeSlide ul {
+    position: absolute;
+    bottom: 20px;
+  }
+  .homeSlide ul li {
+    border: 2px solid #b8b7b7;
+    border-radius: 50%;
+    padding: 10px;
+  }
+  .homeSlide ul li button {
+    background: transparent !important;
+    color: transparent !important;
+  }
+  .homeSlide ul li button::before {
+    font-size: 15px !important;
+    color: #0f3460;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    margin: auto;
+  }
+  /* ///// */
+
+  .home {
+    padding: 10px 0;
+   }
+   
+   .product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    margin-bottom: 50px;
+   }
+   
+   .product-card {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f9f9f9;
+   }
+   
+   /* .product-card img {
+    /* width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover; */
+  
+   
+   .product-card h3 {
+    margin: 1px 0;
+    font-size: 14px;
+    
+   }
+   
+   @media (max-width: 768px) {
+    .product-card {
+       width: 100%;
+    }
+   }
+
+  .Aa{
+    background: #0b150f;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #0575E6, #00F260);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #0575E6, #00F260); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }

@@ -1,0 +1,3 @@
+npx create-react-app cartify
+npm install react-router-dom@latest
+
