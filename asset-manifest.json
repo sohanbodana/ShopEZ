@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ShopEZ/static/css/main.7c87fcab.css",
-    "main.js": "/ShopEZ/static/js/main.a5a6889d.js",
+    "main.css": "/ShopEZ/static/css/main.acaa4500.css",
+    "main.js": "/ShopEZ/static/js/main.8bd90ef2.js",
     "static/js/787.5bc9c49d.chunk.js": "/ShopEZ/static/js/787.5bc9c49d.chunk.js",
     "static/media/slider1.jpg": "/ShopEZ/static/media/slider1.e8093b3d683217c8521b.jpg",
     "static/media/slider2.jpeg": "/ShopEZ/static/media/slider2.6fc36a4c8eb093ea0c41.jpeg",
@@ -12,12 +12,12 @@
     "static/media/slick.ttf": "/ShopEZ/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/ShopEZ/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/ShopEZ/index.html",
-    "main.7c87fcab.css.map": "/ShopEZ/static/css/main.7c87fcab.css.map",
-    "main.a5a6889d.js.map": "/ShopEZ/static/js/main.a5a6889d.js.map",
+    "main.acaa4500.css.map": "/ShopEZ/static/css/main.acaa4500.css.map",
+    "main.8bd90ef2.js.map": "/ShopEZ/static/js/main.8bd90ef2.js.map",
     "787.5bc9c49d.chunk.js.map": "/ShopEZ/static/js/787.5bc9c49d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7c87fcab.css",
-    "static/js/main.a5a6889d.js"
+    "static/css/main.acaa4500.css",
+    "static/js/main.8bd90ef2.js"
   ]
 }
