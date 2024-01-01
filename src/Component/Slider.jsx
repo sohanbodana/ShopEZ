@@ -6,6 +6,7 @@ import slider1 from './slider1.jpg';
 import slider2 from './slider2.jpeg';
 import slider3 from './slider3.jpg';
 import './slider.css';
+import { useNavigate } from "react-router-dom";
 
 const SliderHome = () => {
   const settings = {
@@ -23,11 +24,17 @@ const SliderHome = () => {
     height: "auto", // Maintain the aspect ratio
     maxHeight: "200px", // Set a maximum height if needed
   };
+ 
+  const navigate=useNavigate();
+
+  const watch =()=>{
+    navigate(`/AllCategories`, { state: { selectedCategory: "watch" } });
+  }
 
   return (
     <Slider {...settings} className="ecommerce-slider">
       <div>
-        <img src={slider1} alt="Slide 1" style={imageStyle} />
+        <img  onClick={watch} src={slider1} alt="Slide 1" style={imageStyle} />
       </div>
       <div>
         <img src={slider2} alt="Slide 2" style={imageStyle} />
