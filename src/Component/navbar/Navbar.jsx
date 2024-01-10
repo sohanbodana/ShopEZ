@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light " style={{ backgroundColor: "white", padding: "1px" }}>
+      <nav className="navbar navbar-expand-lg navbar-light topn" style={{ backgroundColor: "white", padding: "1px" }}>
         <img onClick={clicklg} src={lg} alt="logo" style={imageStyle} />
         <Link className="navbar-brand font-weight-bold nohover" to="/" style={logo}>
           ShopEZ
@@ -60,6 +60,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/Support" activeClassName="active"><strong>Contact</strong></NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/Admin" activeClassName="active"><strong>Admin</strong></NavLink>
             </li>
           </ul>
           <div className="btn-group">

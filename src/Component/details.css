@@ -1,0 +1,36 @@
+.image-container {
+    position: relative;
+  }
+  
+  .hover-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+  }
+  
+  .main-image:hover + .hover-image-container {
+    display: block;
+  }
+  
+  .img123 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .img1234 {
+    width: 100px;
+    margin: 5px;
+    transition: transform 0.3s ease-in-out; /* Add smooth transition when hover*/
+  }
+  
+  .img1234:hover {
+    transform: scale(3); 
+  }
+  .w-50:hover{
+    transform: scale(1.3); 
+  }
+  
+  

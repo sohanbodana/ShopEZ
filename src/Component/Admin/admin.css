@@ -1,0 +1,80 @@
+/* Add the following styles to your existing CSS or create a new CSS file */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    /* margin-top: 20px; */
+}
+
+/* Header Styles */
+h2 {
+    color: #007bff;
+}
+
+/* Product List Styles */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    /* margin-bottom: 10px; */
+}
+
+/* Edit and Delete Button Styles */
+button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Loading and Error Message Styles */
+p {
+    font-size: 16px;
+    /* color: #dc3545; */
+}
+
+/* Product Form Styles (You can modify these based on your ProductForm component structure) */
+.product-form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    /* margin-bottom: 5px; */
+}
+
+input,
+textarea,
+button {
+    /* margin-bottom: 15px; */
+}
+
+/* Navbar Styles (Assuming Navbar2 is similar to Bootstrap Navbar) */
+.navbar {
+    background-color: #007bff;
+    padding: 10px 0;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .col-md-6 {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

@@ -12,7 +12,7 @@ const SliderHome = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 600,
+    speed: 100,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,

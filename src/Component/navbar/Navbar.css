@@ -33,16 +33,23 @@ nav li {
     padding: 10px;
 }
 
-.self {
-    /* background: #dc9cdc; */
-    padding: 3px;
+/* .self2:hover {
+    border: 2px solid purple;
+    text-decoration: dotted;
+    border-radius: 10px;
+    transition: 1m; 
+} */
+.self2 {
+    border: 2px solid transparent;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: border 0.5s ease, text-decoration 0.5s ease;
+
 }
 
 .self2:hover {
-    background: gainsboro;
-    border-bottom: 2px solid purple;
+    border: 2px solid purple;
     text-decoration: dotted;
-    border-radius: 10px;
 }
 
 .itemss {
@@ -50,14 +57,7 @@ nav li {
     padding-right: 5%;
 }
 
-.Aa {
-    background: #0b150f;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #0575E6, #00F260);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #0575E6, #00F260);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
+
 .selected{
     border: 2px solid black;
     border-radius: 22px;
@@ -69,3 +69,24 @@ option{
     padding: 3px;
 }
 
+.topn{
+    /* background-image: url(../img/bg1.jpg); */
+    background-image: url(../img/bg2.jpg);
+}
+
+@media only screen and (max-width: 767px) {
+    *{
+        font-size: 10px;
+    }
+    .self2{
+        padding: 2px;
+    }
+}
+@media only screen and (min-width: 100px) and (max-width:576px) {
+    *{
+        font-size: 8px;
+    }
+    .self2{
+        padding: 1px;
+    }
+}

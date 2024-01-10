@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-
-import { Link,useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import Axios from 'axios';
 import './login.css';
 import Navbar from './navbar/Navbar';
 
 const LogIn = () => {
 
-   ////////// home flight data pass
-   
-   const location = useLocation();
-   const selectedDate = location.state?.selectedDate;
-   console.log(selectedDate);
-   
-   
+  ////////// home flight data pass
+
+  const location = useLocation();
+  const selectedDate = location.state?.selectedDate;
+  console.log(selectedDate);
+
+
 
   const [credentials, setCredentials] = useState({
     email: '',
@@ -57,14 +56,14 @@ const LogIn = () => {
 
         alert('Login successful!');
 
-         // Check if flight data is present in location state
-         if (location.state && location.state.selectedFlight) {
+        // Check if flight data is present in location state
+        if (location.state && location.state.selectedFlight) {
           // Redirect to Passenger component
           navigate('/booking', {
             state: {
               username: response.data.username,
               selectedFlight: location.state.selectedFlight,
-              selectedDate:selectedDate,
+              selectedDate: selectedDate,
             },
           });
           console.log(setSelectedFlight);
@@ -91,74 +90,65 @@ const LogIn = () => {
 
   return (
     <>
-   <Navbar/>
-    <div className='AAA'> 
-      <div className="container" style={{ marginTop: "50px" }}>
-        <div className='card text-black m-5' style={{ borderRadius: '25px' }}>
-          <div className='card-body'>
-            <div className='row'>
-              <div className='col-md-10 col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-center '>
+      <Navbar />
+      <div className='AAA'>
+        <div className="container">
+          <center>
+          <div className='card text-black' style={{ borderRadius: '25px' }}>
+            <div className='card-body'>
+              <center>
 
-                <p className="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4 ">LogIn</p>
+                  <p className="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-0 ">LogIn</p>
 
-                <form onSubmit={handleLogin}>
-                  <div className="form-group mb-4">
-                    <label>Email:</label>
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder='Your Email'
-                      value={credentials.email}
-                      onChange={handleChange}
-                      className='form-control'
-                      required
-                    />
-                  </div>
-                  <div className="form-group mb-4">
-                    <label>Password:</label>
-                    <input
-                      type="password"
-                      name="password"
-                      placeholder='Your Password'
-                      value={credentials.password}
-                      onChange={handleChange}
-                      className='form-control'
-                      required
-                    />
-                  </div>
+                  <form onSubmit={handleLogin}>
+                    <div className="form-group ">
+                      <label>Email:</label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder='Your Email'
+                        value={credentials.email}
+                        onChange={handleChange}
+                        className='form-control'
+                        required
+                      />
+                    </div>
+                    <div className="form-group ">
+                      <label>Password:</label>
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder='Your Password'
+                        value={credentials.password}
+                        onChange={handleChange}
+                        className='form-control'
+                        required
+                      />
+                    </div>
 
-                  <div className='form-check mb-4'>
-                    <input
-                      type='checkbox'
-                      id='flexCheckDefault'
-                      className='form-check-input'
-                      onChange={handleCheckboxChange} // Use handleCheckboxChange for checkbox
-                    />
-                    <label className='form-check-label ms-2' htmlFor='flexCheckDefault'>
-                      Agree with the Policy and Terms of Use
-                    </label>
-                  </div>
+                    <div className='form-check '>
+                      <input
+                        type='checkbox'
+                        id='flexCheckDefault'
+                        className='form-check-input'
+                        onChange={handleCheckboxChange} // Use handleCheckboxChange for checkbox
+                      />
+                      <label className='form-check-label ms-2' htmlFor='flexCheckDefault'>
+                        Agree with the Policy and Terms of Use
+                      </label>
+                    </div>
 
-                  <button className='btn btn-primary mb-4'>LogIn</button>
-                  <Link to="/signup">
-                    <h5 className="text-green-600" >Create New Account</h5>
-                  </Link>
-                </form>
-
-              </div>
-
-              <div className='col-md-10 col-lg-6 order-1 order-lg-2 d-flex align-items-center'>
-                <img
-                  src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
-                  alt='Registration'
-                  className='img-fluid'
-                />
-              </div>
+                    <button className='btn btn-primary mb-4'>LogIn</button>
+                    <Link to="/signup">
+                      <h5 className="text-green-600" >Create New Account</h5>
+                    </Link>
+                  </form>
+              </center>
             </div>
           </div>
+          </center>
         </div>
       </div>
-    </div>
     </>
   );
 };

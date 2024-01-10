@@ -21,6 +21,10 @@ import Signup from "./Component/signup";
 import Support from "./Component/support";
 import AllCategories from "./Component/AllCategories";
 import Paymentpage from "./Component/payment/Payment";
+import Admin from "./Component/Admin/Admin";
+import ProductForm from "./Component/Admin/ProductForm";
+import Navbar2 from "./Component/Admin/Navbar2";
+import Details from "./Component/details";
 
 const App=()=> {
   return (
@@ -46,6 +50,10 @@ const App=()=> {
           <Route path="/Support" element={<Support/>} />
           <Route path="/AllCategories" element={<AllCategories/>} />
           <Route path="/paymentpage" element={<Paymentpage/>} />
+          <Route path="/admin" element={<Admin/>} />
+          <Route path="/AdminNavbar" element={<Navbar2/>} />
+          <Route path="/productform" element={<ProductForm/>} />
+          <Route path="/details" element={<Details/>} />
 
         </Routes>
         </CartProvider>

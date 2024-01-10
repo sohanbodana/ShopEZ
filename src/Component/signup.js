@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link,useNavigate, useLocation } from 'react-router-dom';
 import Axios from 'axios';
-import Swal from "sweetalert2";
-import './signup.css';
+import Swal from 'sweetalert2';
+import './login.css';
 import Navbar from './navbar/Navbar';
+
 const Signup = () => {
 
-
-  const navigate = useNavigate();
+  const navigate= useNavigate();
+  const location = useLocation();
+  const selectedDate = location.state?.selectedDate;
+  console.log(selectedDate);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -24,6 +26,13 @@ const Signup = () => {
       ...formData,
       [name]: type === 'checkbox' ? checked : value,
     });
+  };
+
+  const [isChecked, setIsChecked] = useState(false); // New state for the checkbox
+
+
+  const handleCheckboxChange = (e) => {
+    setIsChecked(e.target.checked);
   };
 
   ////////////////////  encrypt pass cheking
@@ -77,108 +86,95 @@ const Signup = () => {
 
   return (
     <>
-      <Navbar/>
-    <div className='AAA'>
-      <div className="container" style={{ marginTop:'80px' }}>
-        <div className='card text-black m-1' style={{ borderRadius: '25px' }}>
-          <div className='card-body p-0'>
-            <div className='row'>
-              <div className='col-md-10 col-lg-6 order-2 order-lg-1 d-flex flex-column align-items-center '>
-                <p className="text-center h2 fw-bold mb-2 mx-1 mx-md-4 mt-1">Sign up</p>
+      <Navbar />
+      <div className='AAA'>
+        <div className="container">
+          <center>
+          <div className='card text-black' style={{ borderRadius: '25px' }}>
+            <div className='card-body'>
+                  <p className="text-center h2 fw-bold mb-5 mx-1 mx-md-4 mt-4 ">SignUp</p>
+                    <div className="mb-0">
+                      <label htmlFor="name" className="form-label">Name:</label>
+                      <div className="input-group">
+                        <input
+                          id="name"
+                          name='name'
+                          type='text'
+                          placeholder='Your Name'
+                          className='form-control rounded-3'
+                          value={formData.name}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
 
-                <div className="mb-0">
-                  <label htmlFor="name" className="form-label">Name:</label>
-                  <div className="input-group">
-                    <input
-                      id="name"
-                      name='name'
-                      type='text'
-                      placeholder='Your Name'
-                      className='form-control rounded-3'
-                      value={formData.name}
-                      onChange={handleChange}
-                    />
+                    <div className="mb-0">
+                      <label htmlFor="email" className="form-label">Email:</label>
+                      <div className="input-group">
+                        <input
+                          id="email"
+                          name='email'
+                          type='email'
+                          placeholder='Your Email'
+                          value={formData.email}
+                          onChange={handleChange}
+                          className='form-control rounded-3'
+                        />
+                      </div>
+                    </div>
+
+                    <div className="mb-0">
+                      <label htmlFor="password" className="form-label">Password:</label>
+                      <div className="input-group">
+                        <input
+                          id="password"
+                          name='password'
+                          type='password'
+                          placeholder='Password'
+                          value={formData.password}
+                          onChange={handleChange}
+                          className='form-control rounded-3'
+                        />
+                      </div>
+                    </div>
+
+                    <div className="mb-0">
+                      <label htmlFor="repeatPassword" className="form-label">Repeat Password:</label>
+                      <div className="input-group">
+                        <input
+                          id="repeatPassword"
+                          name='repeatPassword'
+                          type='password'
+                          placeholder='Repeat your password'
+                          value={formData.repeatPassword}
+                          onChange={handleChange}
+                          className='form-control rounded-3'
+                        />
+                      </div>
+                    </div>
+
+                    <div className='mb-0'>
+                      <input
+                        type='checkbox'
+                        id='subscribe'
+                        name='subscribe'
+                        checked={formData.subscribe}
+                        onChange={handleChange}
+                      /><label className='form-check-label ms-2 d-inline' htmlFor='subscribe'>Agree with the Policy and Terms of Use</label>
+                    </div>
+
+
+                    <button className='btn btn-primary mb-0' onClick={handleSubmit}>Register</button>
+                    <div>
+                      <Link to="/login">
+                        <h5 className="text-green-600" > Already a User ? Login</h5>
+                      </Link>
+                    </div>
                   </div>
-                </div>
-
-                <div className="mb-0">
-                  <label htmlFor="email" className="form-label">Email:</label>
-                  <div className="input-group">
-                    <input
-                      id="email"
-                      name='email'
-                      type='email'
-                      placeholder='Your Email'
-                      value={formData.email}
-                      onChange={handleChange}
-                      className='form-control rounded-3'
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-0">
-                  <label htmlFor="password" className="form-label">Password:</label>
-                  <div className="input-group">
-                    <input
-                      id="password"
-                      name='password'
-                      type='password'
-                      placeholder='Password'
-                      value={formData.password}
-                      onChange={handleChange}
-                      className='form-control rounded-3'
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-0">
-                  <label htmlFor="repeatPassword" className="form-label">Repeat Password:</label>
-                  <div className="input-group">
-                    <input
-                      id="repeatPassword"
-                      name='repeatPassword'
-                      type='password'
-                      placeholder='Repeat your password'
-                      value={formData.repeatPassword}
-                      onChange={handleChange}
-                      className='form-control rounded-3'
-                    />
-                  </div>
-                </div>
-
-                <div className='mb-0'>
-                  <input
-                    type='checkbox'
-                    id='subscribe'
-                    name='subscribe'
-                    checked={formData.subscribe}
-                    onChange={handleChange}
-                  /><label className='form-check-label ms-2 d-inline' htmlFor='subscribe'>Agree with the Policy and Terms of Use</label>
-                </div>
-
-
-                <button className='btn btn-primary mb-0' onClick={handleSubmit}>Register</button>
-                <div>
-                <Link to="/login">
-                  <h5 className="text-green-600" > Already a User ? Login</h5>
-                </Link>
-              </div>
-              </div>
-              <div className='col-md-10 col-lg-6 order-1 order-lg-2 d-flex align-items-center'>
-                <img
-                  src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp'
-                  alt='Registration'
-                  className='img-fluid'
-                />
-              </div>
-
-              
             </div>
+          </center>
           </div>
         </div>
-      </div>
-    </div>
-
     </>
   );
 };

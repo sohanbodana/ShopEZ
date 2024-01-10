@@ -1,9 +1,10 @@
 // Cart.js
 import React from 'react';
 import { useCartState, useCartDispatch } from './CartContext';
-import Navbar from './navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Navbar2 from './Admin/Navbar2';
+
 
 const Cart = () => {
   const cartItems = useCartState();
@@ -14,14 +15,25 @@ const Cart = () => {
     dispatch({ type: 'REMOVE_FROM_CART', payload: productId });
   };
 
-  const handleCheckout = () => {
-    Swal.fire("Successfull Booking!", "", "Success");
-    navigate('/');
-  };
+  const orderNum = (Math.random() * 1000).toFixed(0);
+  const handleCheckout = async () => {
+
+    const { isConfirmed } = await Swal.fire({
+      icon: "success",
+      title: "Your order has been placed successfully!",
+      html: `<p>Thank you for shopping with us! Order Number: ${orderNum}</p>`,
+      showCancelButton: true,
+      confirmButtonText: 'Continue',
+    });
+  
+    if (isConfirmed) {
+      dispatch({ type: 'CLEAR_CART' });
+      navigate('/');
+    }
+  };  
 
   const crt = {
     padding: "4px",
-    background: "#74ebd5",
     background: 'linear-gradient(to right, #ACB6E5, #74ebd5)',
   };
   const imageStyle = {
@@ -31,13 +43,13 @@ const Cart = () => {
     height: '50px',
     verticalAlign: 'middle',
   };
-
+ 
   // Calculate the total price
   const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
   return (
     <div>
-      <Navbar />
+      <Navbar2/>
       <center>
         <h2 style={crt}>Shopping Cart 🛒</h2>
       </center>

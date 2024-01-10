@@ -42,9 +42,11 @@ const Products = () => {
   const navigate=useNavigate();
   /// buy button 
   const [selectedProduct, setSelectedProduct] = useState(null);
+  console.log(selectedProduct);
+
   const clickButton = (product) => {
     setSelectedProduct(product);
-    navigate(`/paymentpage`, { state: { selectedProduct: product } });
+    navigate(`/details`, { state: { selectedProduct: product } });
   };
 
   return (
@@ -60,7 +62,7 @@ const Products = () => {
     <div className="product-list Aa">
         {products./*slice(0, 51)*/map((product) => (
           <div key={product.id} className="product-card">
-          <img src={product.image} alt={product.title} style={imageStyle} />
+          <img src={product.image} alt={product.title} style={imageStyle} onClick={()=>clickButton(product)} />
             <h3>{product.name}</h3>
             <p>{product.description}</p>
             <p>{product.brand}</p>

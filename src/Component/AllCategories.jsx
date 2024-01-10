@@ -61,9 +61,11 @@ const AllCategories = () => {
 
   /// buy button 
   const [selectedProduct, setSelectedProduct] = useState(null);
+  console.log(selectedProduct);
+
   const clickButton = (product) => {
     setSelectedProduct(product);
-    navigate(`/paymentpage`, { state: { selectedProduct: product } });
+    navigate(`/details`, { state: { selectedProduct: product } });
   };
 
   const handleSearch = (event) => {
@@ -94,7 +96,7 @@ const AllCategories = () => {
              <div className="product-list Aa">
              {filteredProducts.map((product) => (
                <div key={product.id} className="product-card">
-                 <img src={product.thumbnail} alt={product.title} style={imageStyle} />
+                 <img src={product.thumbnail} alt={product.title} style={imageStyle} onClick={()=>clickButton(product)} />
                  <h3>{product.title}</h3>
                  <p>${product.price}</p>
                  <p>Rating: {product.rating}</p>
